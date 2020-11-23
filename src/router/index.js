@@ -2,10 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Questions from '../views/Questions.vue'
+import Results from "@/views/Results";
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
@@ -15,6 +16,11 @@ Vue.use(VueRouter)
     path: '/questions',
     name: 'Questions',
     component: Questions
+  },
+  {
+    path: '/results',
+    name: 'Results',
+    component: Results
   }
 ]
 

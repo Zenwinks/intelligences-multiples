@@ -84,6 +84,16 @@ export default new Vuex.Store({
       "J’aime faire des plantations et prendre soin d’un jardin",
       "J’aime pêcher et suivre des animaux à la piste",
       "La meilleure façon d’apprendre pour moi est d’aller en excursion, de voir des expositions sur la nature, etc"
+    ],
+    results: [
+      {label: 'Verbo-Linguistique', result: 0},
+      {label: 'Logico-Mathématiques', result: 0},
+      {label: 'Visuo-Spatiale', result: 0},
+      {label: 'Interpersonnelle', result: 0},
+      {label: 'Intrapersonnelle', result: 0},
+      {label: 'Kinesthésique', result: 0},
+      {label: 'Musicale', result: 0},
+      {label: 'Naturaliste', result: 0}
     ]
   },
   getters: {
@@ -111,58 +121,67 @@ export default new Vuex.Store({
     getNaturaliste: function (state) {
       return state.naturaliste
     },
+    getResults: function (state) {
+      return state.results
+    }
   },
   mutations: {
-    setVerboLing (state, value) {
+    setVerboLing(state, value) {
       state.verboLing = value
     },
-    setLogiqueMath (state, value) {
+    setLogiqueMath(state, value) {
       state.logiqueMath = value
     },
-    setVisioSpatiale (state, value) {
+    setVisioSpatiale(state, value) {
       state.visioSpatiale = value
     },
-    setInterperso (state, value) {
+    setInterperso(state, value) {
       state.interperso = value
     },
-    setIntraperso (state, value) {
+    setIntraperso(state, value) {
       state.intraperso = value
     },
-    setCorpoKine (state, value) {
+    setCorpoKine(state, value) {
       state.corpoKine = value
     },
-    setMusicale (state, value) {
+    setMusicale(state, value) {
       state.musicale = value
     },
-    setNaturaliste (state, value) {
+    setNaturaliste(state, value) {
       state.naturaliste = value
     },
+    setResults(state, value) {
+      state.results = value
+    }
   },
   actions: {
-    setVerboLing ({ commit }, content) {
+    setVerboLing({commit}, content) {
       commit('setVerboLing', content)
     },
-    setLogiqueMath ({ commit }, content) {
+    setLogiqueMath({commit}, content) {
       commit('setLogiqueMath', content)
     },
-    setVisioSpatiale ({ commit }, content) {
+    setVisioSpatiale({commit}, content) {
       commit('setVisioSpatiale', content)
     },
-    setInterperso ({ commit }, content) {
+    setInterperso({commit}, content) {
       commit('setInterperso', content)
     },
-    setIntraperso ({ commit }, content) {
+    setIntraperso({commit}, content) {
       commit('setIntraperso', content)
     },
-    setCorpoKine ({ commit }, content) {
+    setCorpoKine({commit}, content) {
       commit('setCorpoKine', content)
     },
-    setMusicale ({ commit }, content) {
+    setMusicale({commit}, content) {
       commit('setMusicale', content)
     },
-    setNaturaliste ({ commit }, content) {
+    setNaturaliste({commit}, content) {
       commit('setNaturaliste', content)
     },
+    setResults({commit}, content){
+      commit('setResults', content)
+    }
   },
   modules: {}
 })

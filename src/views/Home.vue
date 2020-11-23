@@ -15,9 +15,6 @@
         <div class="expl">
           <div>Après avoir répondu aux questions, le résultat de votre test sera envoyé à votre conseiller(ère)
             pour qu'il(elle) puisse en discuter avec vous.</div>
-          <div>Vous pourrez aussi, par la suite, regarder des exemples de métiers en fonction des
-            intelligences.
-          </div>
         </div>
         <div class="expl gl">Bon test à vous !</div>
         <div class="button">
