@@ -98,8 +98,7 @@ export default new Vuex.Store({
     infos: {
       firstname: '',
       lastname: '',
-      // consultant: 'isabelle.salle@saint-herblain.fr'
-      consultant: 'salle.lucas@hotmail.fr'
+      consultant: 'isabelle.salle@saint-herblain.fr'
     },
     newSnack: {
       'type': 'success',
@@ -137,7 +136,7 @@ export default new Vuex.Store({
     getInfos: function (state) {
       return state.infos
     },
-    getSnackbar (state) {
+    getSnackbar(state) {
       return state.newSnack
     },
   },
@@ -172,7 +171,7 @@ export default new Vuex.Store({
     setInfos(state, value) {
       state.infos = value
     },
-    setSnackBar (state, newSnack) {
+    setSnackBar(state, newSnack) {
       state.newSnack.type = newSnack.type
       state.newSnack.text = newSnack.text
     },
@@ -202,13 +201,13 @@ export default new Vuex.Store({
     setNaturaliste({commit}, content) {
       commit('setNaturaliste', content)
     },
-    setResults({commit}, content){
+    setResults({commit}, content) {
       commit('setResults', content)
     },
-    setInfos({commit}, content){
+    setInfos({commit}, content) {
       commit('setInfos', content)
     },
-    setSnackBar ({commit}, newState) {
+    setSnackBar({commit}, newState) {
       commit('setSnackBar', newState)
     },
   },

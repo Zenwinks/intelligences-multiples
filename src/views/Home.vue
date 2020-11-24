@@ -44,8 +44,7 @@ export default {
           id: 1,
           firstname: 'Isabelle',
           lastname: 'SALLÉ',
-          // email: 'isabelle.salle@saint-herblain.fr'
-          email: 'salle.lucas@hotmail.fr'
+          email: 'isabelle.salle@saint-herblain.fr'
         },
         {
           id: 2,
