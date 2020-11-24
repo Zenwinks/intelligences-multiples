@@ -3,13 +3,13 @@
     <div class="results">
       <h2>Résultats du test des intelligences multiples</h2>
       <div class="score">
-        <span>Les résultats du test ont été transmis à votre conseiller(ère), reprenez contact avec lui(elle) pour
+        <span>Les résultats du test ont été transmis à votre conseiller(ère). Reprenez contact avec lui(elle) pour
           poursuivre la réflexion sur votre projet d'évolution professionnelle.</span>
       </div>
     </div>
     <div class="reset-button">
       <div class="button">
-        <button class="btn btn-primary btn-lg" type="button" @click="$router.push('/')">Recommencer le test</button>
+        <button class="btn btn-primary btn-lg" type="button" @click="$router.push('/')">Retour à l'accueil</button>
       </div>
     </div>
   </user-layout>
