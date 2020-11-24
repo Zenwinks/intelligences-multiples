@@ -94,7 +94,17 @@ export default new Vuex.Store({
       {label: 'Kinesthésique', result: 0},
       {label: 'Musicale', result: 0},
       {label: 'Naturaliste', result: 0}
-    ]
+    ],
+    infos: {
+      firstname: '',
+      lastname: '',
+      // consultant: 'isabelle.salle@saint-herblain.fr'
+      consultant: 'salle.lucas@hotmail.fr'
+    },
+    newSnack: {
+      'type': 'success',
+      'text': ''
+    }
   },
   getters: {
     getVerboLing: function (state) {
@@ -123,7 +133,13 @@ export default new Vuex.Store({
     },
     getResults: function (state) {
       return state.results
-    }
+    },
+    getInfos: function (state) {
+      return state.infos
+    },
+    getSnackbar (state) {
+      return state.newSnack
+    },
   },
   mutations: {
     setVerboLing(state, value) {
@@ -152,7 +168,14 @@ export default new Vuex.Store({
     },
     setResults(state, value) {
       state.results = value
-    }
+    },
+    setInfos(state, value) {
+      state.infos = value
+    },
+    setSnackBar (state, newSnack) {
+      state.newSnack.type = newSnack.type
+      state.newSnack.text = newSnack.text
+    },
   },
   actions: {
     setVerboLing({commit}, content) {
@@ -181,7 +204,13 @@ export default new Vuex.Store({
     },
     setResults({commit}, content){
       commit('setResults', content)
-    }
+    },
+    setInfos({commit}, content){
+      commit('setInfos', content)
+    },
+    setSnackBar ({commit}, newState) {
+      commit('setSnackBar', newState)
+    },
   },
   modules: {}
 })

@@ -1,42 +1,47 @@
 <template>
-  <div class="questions-wrapper">
-    <div class="questions-block">
-      <div class="questions">
-        <question-block v-if="actualPage === 1" :questionResults="resultVerboLing"
-                        @resultChange="resultVerboLing = $event"/>
-        <question-block v-if="actualPage === 2" :questionResults="resultLogiqueMath"
-                        @resultChange="resultLogiqueMath = $event"/>
-        <question-block v-if="actualPage === 3" :questionResults="resultVisioSpatiale"
-                        @resultChange="resultVisioSpatiale = $event"/>
-        <question-block v-if="actualPage === 4" :questionResults="resultInterperso"
-                        @resultChange="resultInterperso = $event"/>
-        <question-block v-if="actualPage === 5" :questionResults="resultIntraperso"
-                        @resultChange="resultIntraperso = $event"/>
-        <question-block v-if="actualPage === 6" :questionResults="resultCorpoKine"
-                        @resultChange="resultCorpoKine = $event"/>
-        <question-block v-if="actualPage === 7" :questionResults="resultMusicale"
-                        @resultChange="resultMusicale = $event"/>
-        <question-block v-if="actualPage === 8" :questionResults="resultNaturaliste"
-                        @resultChange="resultNaturaliste = $event"/>
+  <user-layout>
+    <div class="progress">
+      <div :style="'width:' + (actualPage/8)*100 + '%'" class="progress-bar" role="progressbar">{{ actualPage }}/8</div>
+    </div>
+    <div class="questions">
+      <question-block v-if="actualPage === 1" :questionResults="resultVerboLing"
+                      @resultChange="resultVerboLing = $event"/>
+      <question-block v-if="actualPage === 2" :questionResults="resultLogiqueMath"
+                      @resultChange="resultLogiqueMath = $event"/>
+      <question-block v-if="actualPage === 3" :questionResults="resultVisioSpatiale"
+                      @resultChange="resultVisioSpatiale = $event"/>
+      <question-block v-if="actualPage === 4" :questionResults="resultInterperso"
+                      @resultChange="resultInterperso = $event"/>
+      <question-block v-if="actualPage === 5" :questionResults="resultIntraperso"
+                      @resultChange="resultIntraperso = $event"/>
+      <question-block v-if="actualPage === 6" :questionResults="resultCorpoKine"
+                      @resultChange="resultCorpoKine = $event"/>
+      <question-block v-if="actualPage === 7" :questionResults="resultMusicale"
+                      @resultChange="resultMusicale = $event"/>
+      <question-block v-if="actualPage === 8" :questionResults="resultNaturaliste"
+                      @resultChange="resultNaturaliste = $event"/>
+    </div>
+    <div class="buttons">
+      <div v-if="actualPage === 1" class="button">
+        <button class="btn btn-primary btn-lg" type="button" @click="$router.push('/')">Précédent</button>
       </div>
-      <div class="buttons">
-        <div v-if="actualPage > 1" class="button">
-          <button class="btn btn-primary btn-lg" type="button" @click="changePage(-1)">Précédent</button>
-        </div>
-        <div v-if="actualPage < 8" class="button">
-          <button class="btn btn-primary btn-lg" type="button" @click="changePage(1)">Suivant</button>
-        </div>
-        <div v-if="actualPage === 8" class="button">
-          <button class="btn btn-success btn-lg" type="button" @click="calculResult()">Terminer</button>
-        </div>
+      <div v-if="actualPage > 1" class="button">
+        <button class="btn btn-primary btn-lg" type="button" @click="changePage(-1)">Précédent</button>
+      </div>
+      <div v-if="actualPage < 8" class="button">
+        <button class="btn btn-primary btn-lg" type="button" @click="changePage(1)">Suivant</button>
+      </div>
+      <div v-if="actualPage === 8" class="button">
+        <button class="btn btn-success btn-lg" type="button" @click="calculResult()">Terminer</button>
       </div>
     </div>
-  </div>
+  </user-layout>
 </template>
 
 <script>
 import {mapActions, mapGetters} from "vuex";
 import QuestionBlock from "@/components/QuestionBlock";
+import UserLayout from "@/layouts/UserLayout";
 
 export default {
   data() {
@@ -56,6 +61,7 @@ export default {
     this.buildQuestionResults()
   },
   components: {
+    UserLayout,
     QuestionBlock
   },
   computed: {
@@ -120,25 +126,10 @@ export default {
 </script>
 
 <style scoped>
-.questions-wrapper {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 2.5fr 1fr;
-  grid-template-rows: 1fr 3.5fr 1fr;
-  background-color: dodgerblue;
-}
-
-.questions-block {
-  height: 100%;
-  width: 100%;
-  grid-column: 2/3;
-  grid-row: 2/3;
-  background-color: white;
-  border-radius: 20px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+.progress {
+  height: 2.5%;
+  margin: 2.5%;
+  margin-bottom: 0;
 }
 
 .questions {
@@ -148,7 +139,7 @@ export default {
 
 .buttons {
   width: 100%;
-  height: 25%;
+  height: 20%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -156,7 +147,6 @@ export default {
 }
 
 .button {
-  width: 20%;
   margin: 5px;
 }
 

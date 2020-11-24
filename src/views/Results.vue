@@ -1,28 +1,28 @@
 <template>
-  <div class="result-wrapper">
-    <div v-if="results.length > 0" class="result-card">
-      <div class="results">
-        <h2>Résultats du test des intelligences multiples</h2>
-        <div class="score">
-        <span v-for="(result, key) in results" :key="key" class="result">
-          <span class="label">Intelligence {{ result.label }} :</span> {{ result.result }}</span>
-        </div>
-      </div>
-      <div class="reset-button">
-        <div class="button">
-          <button class="btn btn-primary btn-lg" type="button" @click="$router.push('/')">Recommencer le test</button>
-        </div>
+  <user-layout>
+    <div class="results">
+      <h2>Résultats du test des intelligences multiples</h2>
+      <div class="score">
+        <span>Les résultats du test ont été transmis à votre conseiller(ère), reprenez contact avec lui(elle) pour
+          poursuivre la réflexion sur votre projet d'évolution professionnelle.</span>
       </div>
     </div>
-  </div>
+    <div class="reset-button">
+      <div class="button">
+        <button class="btn btn-primary btn-lg" type="button" @click="$router.push('/')">Recommencer le test</button>
+      </div>
+    </div>
+  </user-layout>
 </template>
 
 <script>
 import {mapGetters} from "vuex";
 import emailjs from 'emailjs-com';
+import UserLayout from "@/layouts/UserLayout";
 
 export default {
   name: "Results",
+  components: {UserLayout},
   data() {
     return {
       results: []
@@ -34,7 +34,7 @@ export default {
     this.sendEmail()
   },
   computed: {
-    ...mapGetters(['getResults'])
+    ...mapGetters(['getResults', 'getInfos'])
   },
   methods: {
     compare(a, b) {
@@ -54,7 +54,12 @@ export default {
       emailjs.send(
           'service_intell_multi',
           'template_intell_multi',
-          {results: emailLines},
+          {
+            results: emailLines,
+            firstname: '<b>' + this.getInfos.firstname + '</b>',
+            lastname: '<b>' + this.getInfos.lastname + '</b>',
+            recipient: this.getInfos.consultant
+          },
           'user_5IFrM8CHH0gfe3Xt6kHQI')
           .then((response) => {
             console.log('SUCCESS!', response.status, response.text);
@@ -68,44 +73,28 @@ export default {
 </script>
 
 <style scoped>
-.result-wrapper {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 2.5fr 1fr;
-  grid-template-rows: 1fr 3.5fr 1fr;
-  background-color: dodgerblue;
-}
-
-.result-card {
-  height: 100%;
-  width: 100%;
-  grid-column: 2/3;
-  grid-row: 2/3;
-  background-color: white;
-  border-radius: 20px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  padding-top: 5%;
-}
-
 .results {
   height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin: 3%;
+  font-weight: 700;
 }
 
 .score {
-  margin-top: 5%;
+  width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
-.result {
-  margin-bottom: 10px;
-}
-
-.label {
-  font-weight: bold;
+span {
+  font-size: 22px;
 }
 
 .reset-button {
