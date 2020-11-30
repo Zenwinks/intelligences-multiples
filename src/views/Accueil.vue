@@ -7,7 +7,9 @@
         <ul class="list-group list-group-flush">
           <li v-for="(choice, i) in choices" :key="i" class="list-group-item">
             <div class="choice">{{ choice.label }}</div>
-            <div class="choice-value">{{ choice.icon }}</div>
+            <div class="choice-value">
+              <i :class="'fas ' + choice.icon"/>
+            </div>
           </li>
         </ul>
       </div>
@@ -40,11 +42,11 @@ export default {
   data() {
     return {
       choices: [
-        {label: 'Cela ne me correspond pas du tout', icon: '😟'},
-        {label: 'Cela me correspond un peu', icon: '😕'},
-        {label: 'Cela me correspond moyennement', icon: '😐'},
-        {label: 'Cela me correspond beaucoup', icon: '🙂'},
-        {label: 'Cela me correspond tout à fait', icon: '😀'}
+        {label: 'Cela ne me correspond pas du tout', icon: 'fa-sad-tear'},
+        {label: 'Cela me correspond un peu', icon: 'fa-frown'},
+        {label: 'Cela me correspond moyennement', icon: 'fa-meh'},
+        {label: 'Cela me correspond beaucoup', icon: 'fa-smile'},
+        {label: 'Cela me correspond tout à fait', icon: 'fa-laugh'}
       ]
     }
   },
