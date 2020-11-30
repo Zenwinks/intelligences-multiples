@@ -23,7 +23,7 @@
     </div>
     <div class="buttons">
       <div v-if="actualPage === 1" class="button">
-        <button class="btn btn-primary btn-lg" type="button" @click="$router.push('/')">Précédent</button>
+        <button class="btn btn-primary btn-lg" type="button" @click="$router.go(-1)">Précédent</button>
       </div>
       <div v-if="actualPage > 1" class="button">
         <button class="btn btn-primary btn-lg" type="button" @click="changePage(-1)">Précédent</button>
