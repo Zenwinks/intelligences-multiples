@@ -4,11 +4,41 @@
       <thead>
       <tr>
         <th></th>
-        <th><i class="fas fa-sad-tear" style="color: red; font-size: 20px"/></th>
-        <th><i class="fas fa-frown" style="color: orange; font-size: 20px"/></th>
-        <th><i class="fas fa-meh" style="color: yellow; font-size: 20px"/></th>
-        <th><i class="fas fa-smile" style="color: greenyellow; font-size: 20px"/></th>
-        <th><i class="fas fa-laugh" style="color: green; font-size: 20px"/></th>
+        <th>
+          <span class="fa-stack" style="vertical-align: top; height: auto">
+              <i class="fas fa-circle fa-stack-1x" style="color: black"/>
+              <i class="fas fa-sad-tear fa-stack-1x fa-inverse"
+                 style="font-size: 20px; color: red"/>
+            </span>
+        </th>
+        <th>
+          <span class="fa-stack" style="vertical-align: top; height: auto">
+              <i class="fas fa-circle fa-stack-1x" style="color: black"/>
+              <i class="fas fa-frown fa-stack-1x fa-inverse"
+                 style="font-size: 20px; color: orange"/>
+            </span>
+        </th>
+        <th>
+          <span class="fa-stack" style="vertical-align: top; height: auto">
+              <i class="fas fa-circle fa-stack-1x" style="color: black"/>
+              <i class="fas fa-meh fa-stack-1x fa-inverse"
+                 style="font-size: 20px; color: yellow"/>
+            </span>
+        </th>
+        <th>
+          <span class="fa-stack" style="vertical-align: top; height: auto">
+              <i class="fas fa-circle fa-stack-1x" style="color: black"/>
+              <i class="fas fa-smile fa-stack-1x fa-inverse"
+                 style="font-size: 20px; color: greenyellow"/>
+            </span>
+        </th>
+        <th>
+          <span class="fa-stack" style="vertical-align: top; height: auto">
+              <i class="fas fa-circle fa-stack-1x" style="color: black"/>
+              <i class="fas fa-laugh fa-stack-1x fa-inverse"
+                 style="font-size: 20px; color: green"/>
+            </span>
+        </th>
       </tr>
       </thead>
       <tbody>

@@ -8,7 +8,10 @@
           <li v-for="(choice, i) in choices" :key="i" class="list-group-item">
             <div class="choice">{{ choice.label }}</div>
             <div class="choice-value">
-              <i :class="'fas ' + choice.icon" :style="'font-size: 20px; color: ' + choice.color"/>
+              <span class="fa-stack" style="vertical-align: top; height: auto">
+                <i class="fas fa-circle fa-stack-1x" style="color: black"/>
+                <i :class="'fas ' + choice.icon + ' fa-stack-1x fa-inverse'" :style="'font-size: 20px; color: ' + choice.color"/>
+              </span>
             </div>
           </li>
         </ul>
