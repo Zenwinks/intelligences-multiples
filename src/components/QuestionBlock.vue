@@ -4,11 +4,11 @@
       <thead>
       <tr>
         <th></th>
-        <th><i class="fas fa-sad-tear" style="color: red"/></th>
-        <th><i class="fas fa-frown" style="color: orange"/></th>
-        <th><i class="fas fa-meh" style="color: yellow"/></th>
-        <th><i class="fas fa-smile" style="color: greenyellow"/></th>
-        <th><i class="fas fa-laugh" style="color: green"/></th>
+        <th><i class="fas fa-sad-tear" style="color: red; font-size: 20px"/></th>
+        <th><i class="fas fa-frown" style="color: orange; font-size: 20px"/></th>
+        <th><i class="fas fa-meh" style="color: yellow; font-size: 20px"/></th>
+        <th><i class="fas fa-smile" style="color: greenyellow; font-size: 20px"/></th>
+        <th><i class="fas fa-laugh" style="color: green; font-size: 20px"/></th>
       </tr>
       </thead>
       <tbody>
